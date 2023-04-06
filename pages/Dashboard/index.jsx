@@ -13,7 +13,7 @@ import Footer from '../../components/Footer'
 
 const dashboard = () => {
   const contractAddress = factoryAddress.tokenFactory
-  const web3 = new Web3('https://liberty10.shardeum.org')
+  const web3 = new Web3('https://liberty20.shardeum.org')
 
   const [tokenAddresses, setTokenAddresses] = useState([])
   const [tokensCreated, setTokensCreated] = useState(0)
