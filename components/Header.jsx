@@ -89,9 +89,9 @@ export default function Header() {
                 {
                   chainId: '0x1f90',
                   chainName: 'Shardeum Liberty',
-                  rpcUrls: ['https://liberty10.shardeum.org'],
+                  rpcUrls: ['https://liberty20.shardeum.org'],
                   blockExplorerUrls: [
-                    'https://explorer.liberty10.shardeum.org/',
+                    'https://explorer.liberty20.shardeum.org/',
                   ],
                   nativeCurrency: {
                     symbol: 'SHM',
