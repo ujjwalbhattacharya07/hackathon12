@@ -4,13 +4,13 @@ export default function Footer() {
     <footer  className="footer-bottom dark:bg-gray-800 dark:text-gray-50 static bottom-0 ">
       <div className="container flex flex-col p-4 mx-auto md:p-4 lg:flex-row divide-gray-400">
         <ul className="self-center py-2 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
-          <li className="text-bold text-sm">Made With ❤️ By Shailesh</li>
+          <li className="text-bold text-sm">Developed by Blockings69</li>
         </ul>
         <div className="flex flex-col justify-center pt-6 lg:pt-0">
           <div className="flex justify-center space-x-4">
             <a
               rel="noopener noreferrer"
-              href="https://in.linkedin.com/in/shailesh-khote-1252b5143"
+              href="https://www.linkedin.com/in/g-pardhiv-varma-6230b2242/"
               title="Linkedin"
               className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900"
             >
@@ -18,7 +18,7 @@ export default function Footer() {
             </a>
             <a
               rel="noopener noreferrer"
-              href="https://twitter.com/0x_shailesh"
+              href="https://twitter.com/UjjwalBhatt07"
               title="Twitter"
               className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900"
             >
@@ -33,8 +33,8 @@ export default function Footer() {
             </a>
             <a
               rel="noopener noreferrer"
-              href="https://github.com/Shaileshkhote/Token-Generato"
-              title="Gmail"
+              href="https://github.com/ujjwalbhattacharya07/thebestdapp"
+              title="GitHub Repo"
               className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900"
             >
               <BsGithub />
