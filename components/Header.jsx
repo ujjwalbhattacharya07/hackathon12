@@ -117,7 +117,7 @@ export default function Header() {
       <div className='md:flex items-center justify-between bg-gray-900 py-4 md:px-10 px-7'>
       <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
       text-gray-800'>
-        <img src="/logo.png" className='w-36'/>
+        <img src="/logo1.png" className='w-36'/>
        
       </div>
       
