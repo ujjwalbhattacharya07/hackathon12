@@ -16,7 +16,7 @@ export default function MintModal({
   setIsChangeMinter
 }) {
   const contractAddress = tokenAddress
-  const web3 = new Web3('https://liberty10.shardeum.org')
+  const web3 = new Web3('https://liberty20.shardeum.org')
 
   const {
     register,
