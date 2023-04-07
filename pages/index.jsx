@@ -25,7 +25,7 @@ const home = () => {
   })
   
   return (
-    <div className="bg-gray-700">
+    <div className="bg-gradient-to-b from-gray-700 to-purple-900">
   
       <Header />
       <Creator/>
