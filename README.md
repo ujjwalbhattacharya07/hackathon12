@@ -1,6 +1,20 @@
-# Next.js + Tailwind CSS Example
+# About the Project:
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+It is important to address the need for unique tokens in the blockchain. Tokens, or digital assets, are a fundamental aspect of blockchain technology and have various use cases such as representing ownership of an asset, serving as a medium of exchange.
+Unique tokens allow for the creation of custom assets that can represent anything from a physical asset, such as real estate or artwork, to a virtual asset, such as in-game currency or access to a service. 
+
+Features:
+1. Allow users to trade the tokens they have created on your Dapp with other users.
+2. Allow users to transfer the tokens they have created to other users.
+3. Use event logging to track token creation, transfer, and other actions.
+4. Allow users to check their token balance and transaction history.
+
+In summary, unique tokens in blockchain enable the creation of digital assets that can represent a wide range of things, and allow for new revenue streams. Our Dapp aims to make the process of creating and managing these tokens more accessible and efficient on the Shardeum TestNet.
+
+# Future Roadmap
+We intend to develop a similar  DApp which enables creation of ERC721(NFTs) and acts like a token factory for NFTs. The DApp will also enable the user to directly host the multimedia/information on the IPFS system and will deploy them on the blockchain, hence providing the transaction address and gives ability to user to mint and further circulate it to the other users.
+
+
 
 ## Deploy your own
 
