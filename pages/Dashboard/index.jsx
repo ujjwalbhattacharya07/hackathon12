@@ -7,7 +7,7 @@ import Web3 from 'web3'
 import factoryABI from '../../constants/abi/factory.json'
 import factoryAddress from '../../constants/contractAddresses.json'
 import { useWeb3React } from '@web3-react/core'
-import { toast, ToastContainer } from 'react-toastify'
+import { toast,ToastContainer } from 'react-toastify'
 import Footer from '../../components/Footer'
 
 const dashboard = () => {
@@ -16,15 +16,15 @@ const dashboard = () => {
 
   const [tokenAddresses, setTokenAddresses] = useState([])
   const [tokensCreated, setTokensCreated] = useState(0)
-  const { chainId, account, activate, active, library } = useWeb3React()
+  const { chainId, account, activate, active,library } = useWeb3React()
 
   const factoryTokenContract = new web3.eth.Contract(
     factoryABI,
-    contractAddress
+    contractAddress,
   )
 
   useEffect(() => {
-    if (active) {
+    if(active){
       async function fetchTokensCreated() {
         const tempTokensCreated = await factoryTokenContract.methods
           .getTokensCreatedLength(account)
@@ -32,10 +32,11 @@ const dashboard = () => {
         setTokensCreated(tempTokensCreated)
       }
       fetchTokensCreated()
-    } else {
+      console.log(tokensCreated)
+    }else{
       // toast.warning("Please Connect Your Wallet To View Dashboard")
     }
-  }, [active])
+  })
 
   useEffect(() => {
     async function fetchTokensAddress() {
@@ -44,24 +45,24 @@ const dashboard = () => {
           .creatorsMap(account, [i])
           .call()
         setTokenAddresses((arr) => [...new Set([...arr, tokenAddress])])
+        console.log(tokenAddresses)
       }
     }
     fetchTokensAddress()
   }, [tokensCreated])
 
   return (
-    <div className="relative">
-      <div className="fixed z-0 h-screen w-screen bg-gradient-to-b from-#01204c to-#7149e1 animate-pulse" />
-      <div className="relative z-10 lg:h-screen h-full bg-cyan-900 bg-fixed">
-        {/* <ToastContainer /> */}
-        <Header />
-        <div className="mt-16 flex justify-evenly flex-wrap w-full">
-          {tokenAddresses.map((value) => {
-            return <DashboardComp tokenAddress={value} />
-          })}
-        </div>
-        <Footer />
+    <div className="lg:h-screen h-full bg-gradient-to-b from-cyan-900 to-purple-600 bg-fixed">
+      {/* <ToastContainer /> */}
+      <Header />
+      <div className=' mt-16 flex justify-evenly flex-wrap w-full'>
+        {tokenAddresses.map((value) => {
+          return (
+            <DashboardComp tokenAddress={value} />
+          )
+        })}
       </div>
+      <Footer/>
     </div>
   )
 }
