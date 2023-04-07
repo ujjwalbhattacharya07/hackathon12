@@ -10,13 +10,15 @@ import { useWeb3React } from '@web3-react/core'
 import { toast,ToastContainer } from 'react-toastify'
 import Footer from '../../components/Footer'
 
+
 const dashboard = () => {
   const contractAddress = factoryAddress.tokenFactory
   const web3 = new Web3('https://liberty20.shardeum.org')
 
   const [tokenAddresses, setTokenAddresses] = useState([])
   const [tokensCreated, setTokensCreated] = useState(0)
-  const { chainId, account, activate, active,library } = useWeb3React()
+  const { chainId, account, activate, active, library } = useWeb3React()
+
 
   const factoryTokenContract = new web3.eth.Contract(
     factoryABI,
@@ -32,11 +34,10 @@ const dashboard = () => {
         setTokensCreated(tempTokensCreated)
       }
       fetchTokensCreated()
-      console.log(tokensCreated)
     }else{
       // toast.warning("Please Connect Your Wallet To View Dashboard")
     }
-  })
+  }, [active])
 
   useEffect(() => {
     async function fetchTokensAddress() {
@@ -45,15 +46,25 @@ const dashboard = () => {
           .creatorsMap(account, [i])
           .call()
         setTokenAddresses((arr) => [...new Set([...arr, tokenAddress])])
-        console.log(tokenAddresses)
       }
     }
     fetchTokensAddress()
   }, [tokensCreated])
 
   return (
-    <div className="lg:h-screen h-full bg-gradient-to-b from-cyan-900 to-purple-600 bg-fixed">
-      {/* <ToastContainer /> */}
+    <div className="lg:h-screen h-full relative">
+      <Head>
+        <title>Dashboard | Your NFTs</title>
+      </Head>
+      <div className="w-full h-full absolute top-0 left-0">
+        <div
+          className="w-full h-full absolute top-0 left-0"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, #01204c, #7149e1)`,
+            animation: "pulse 2s ease-in-out infinite"
+          }}
+        />
+      </div>
       <Header />
       <div className=' mt-16 flex justify-evenly flex-wrap w-full'>
         {tokenAddresses.map((value) => {
