@@ -23,14 +23,13 @@ const home = () => {
 
 
   })
-  
+
   return (
-    <div className="bg-gradient-to-b from-gray-700 to-purple-900">
-  
+    <div className="bg-gradient-to-b from-blue-900 to-purple-800">
       <Header />
       <Creator/>
       <Footer/>
-  </div>
+    </div>
   )
 }
 
