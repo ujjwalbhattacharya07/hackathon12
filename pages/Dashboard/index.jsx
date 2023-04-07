@@ -10,7 +10,6 @@ import { useWeb3React } from '@web3-react/core'
 import { toast,ToastContainer } from 'react-toastify'
 import Footer from '../../components/Footer'
 
-
 const dashboard = () => {
   const contractAddress = factoryAddress.tokenFactory
   const web3 = new Web3('https://liberty20.shardeum.org')
@@ -19,27 +18,24 @@ const dashboard = () => {
   const [tokensCreated, setTokensCreated] = useState(0)
   const { chainId, account, activate, active,library } = useWeb3React()
 
-
   const factoryTokenContract = new web3.eth.Contract(
     factoryABI,
     contractAddress,
   )
 
-  
-
   useEffect(() => {
     if(active){
-    async function fetchTokensCreated() {
-      const tempTokensCreated = await factoryTokenContract.methods
-        .getTokensCreatedLength(account)
-        .call()
-      setTokensCreated(tempTokensCreated)
+      async function fetchTokensCreated() {
+        const tempTokensCreated = await factoryTokenContract.methods
+          .getTokensCreatedLength(account)
+          .call()
+        setTokensCreated(tempTokensCreated)
+      }
+      fetchTokensCreated()
+      console.log(tokensCreated)
+    }else{
+      // toast.warning("Please Connect Your Wallet To View Dashboard")
     }
-    fetchTokensCreated()
-    console.log(tokensCreated)
-  }else{
-    // toast.warning("Please Connect Your Wallet To View Dashboard")
-  }
   })
 
   useEffect(() => {
@@ -56,22 +52,16 @@ const dashboard = () => {
   }, [tokensCreated])
 
   return (
-    <div className="lg:h-screen h-full bg-cyan-900 bg-fixed">
-       {/* <ToastContainer /> */}
+    <div className="lg:h-screen h-full bg-gradient-to-b from-cyan-900 to-purple-600 bg-fixed">
+      {/* <ToastContainer /> */}
       <Header />
       <div className=' mt-16 flex justify-evenly flex-wrap w-full'>
-
-      {tokenAddresses.map((value) => {
-        return (
-
-        <DashboardComp tokenAddress={value} />
-
-        )
-
-      })}
-
+        {tokenAddresses.map((value) => {
+          return (
+            <DashboardComp tokenAddress={value} />
+          )
+        })}
       </div>
-
       <Footer/>
     </div>
   )
