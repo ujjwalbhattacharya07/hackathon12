@@ -7,9 +7,8 @@ import Web3 from 'web3'
 import factoryABI from '../../constants/abi/factory.json'
 import factoryAddress from '../../constants/contractAddresses.json'
 import { useWeb3React } from '@web3-react/core'
-import { toast,ToastContainer } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 import Footer from '../../components/Footer'
-
 
 const dashboard = () => {
   const contractAddress = factoryAddress.tokenFactory
@@ -19,14 +18,13 @@ const dashboard = () => {
   const [tokensCreated, setTokensCreated] = useState(0)
   const { chainId, account, activate, active, library } = useWeb3React()
 
-
   const factoryTokenContract = new web3.eth.Contract(
     factoryABI,
-    contractAddress,
+    contractAddress
   )
 
   useEffect(() => {
-    if(active){
+    if (active) {
       async function fetchTokensCreated() {
         const tempTokensCreated = await factoryTokenContract.methods
           .getTokensCreatedLength(account)
@@ -34,7 +32,7 @@ const dashboard = () => {
         setTokensCreated(tempTokensCreated)
       }
       fetchTokensCreated()
-    }else{
+    } else {
       // toast.warning("Please Connect Your Wallet To View Dashboard")
     }
   }, [active])
@@ -52,28 +50,18 @@ const dashboard = () => {
   }, [tokensCreated])
 
   return (
-    <div className="lg:h-screen h-full relative">
-      <Head>
-        <title>Dashboard | Your NFTs</title>
-      </Head>
-      <div className="w-full h-full absolute top-0 left-0">
-        <div
-          className="w-full h-full absolute top-0 left-0"
-          style={{
-            backgroundImage: `linear-gradient(to bottom, #01204c, #7149e1)`,
-            animation: "pulse 2s ease-in-out infinite"
-          }}
-        />
+    <div className="relative">
+      <div className="fixed z-0 h-screen w-screen bg-gradient-to-b from-#01204c to-#7149e1 animate-pulse" />
+      <div className="relative z-10 lg:h-screen h-full bg-cyan-900 bg-fixed">
+        {/* <ToastContainer /> */}
+        <Header />
+        <div className="mt-16 flex justify-evenly flex-wrap w-full">
+          {tokenAddresses.map((value) => {
+            return <DashboardComp tokenAddress={value} />
+          })}
+        </div>
+        <Footer />
       </div>
-      <Header />
-      <div className=' mt-16 flex justify-evenly flex-wrap w-full'>
-        {tokenAddresses.map((value) => {
-          return (
-            <DashboardComp tokenAddress={value} />
-          )
-        })}
-      </div>
-      <Footer/>
     </div>
   )
 }
