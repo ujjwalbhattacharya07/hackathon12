@@ -52,7 +52,7 @@ const dashboard = () => {
   }, [tokensCreated])
 
   return (
-    <div className="lg:h-screen h-full bg-gradient-to-b from-cyan-900 to-purple-600 bg-fixed">
+<div className="min-h-screen lg:h-screen h-full bg-gradient-to-b from-cyan-900 to-purple-600 bg-fixed">
       {/* <ToastContainer /> */}
       <Header />
       <div className=' mt-16 flex justify-evenly flex-wrap w-full'>
