@@ -52,19 +52,16 @@ const dashboard = () => {
   }, [tokensCreated])
 
   return (
-<div className="min-h-screen lg:h-screen h-full bg-gradient-to-b from-cyan-900 to-purple-600 bg-fixed">
-      {/* <ToastContainer /> */}
-      <Header />
-      <div className=' mt-16 flex justify-evenly flex-wrap w-full'>
-        {tokenAddresses.map((value) => {
-          return (
-            <DashboardComp tokenAddress={value} />
-          )
-        })}
-      </div>
-      <Footer/>
+  <div className="min-h-screen lg:h-screen h-full bg-gradient-to-b from-cyan-900 to-purple-600 bg-fixed">
+    <Header />
+    <div className="mt-16 flex justify-evenly flex-wrap w-full">
+      {tokenAddresses.map((value) => {
+        return <DashboardComp tokenAddress={value} />;
+      })}
     </div>
-  )
+    <Footer />
+  </div>
+)
 }
 
 export default dashboard
