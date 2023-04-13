@@ -4,7 +4,7 @@ export default function Footer() {
     <footer  className="footer-bottom dark:bg-gray-800 dark:text-gray-50 static bottom-0 ">
       <div className="container flex flex-col p-4 mx-auto md:p-4 lg:flex-row divide-gray-400">
         <ul className="self-center py-2 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
-          <li className="text-bold text-sm">Developed by Blockings69</li>
+          <li className="text-bold text-sm">Developed by Ujjwal</li>
         </ul>
         <div className="flex flex-col justify-center pt-6 lg:pt-0">
           <div className="flex justify-center space-x-4">
