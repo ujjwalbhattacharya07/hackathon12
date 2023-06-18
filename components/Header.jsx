@@ -87,14 +87,14 @@ export default function Header() {
               method: 'wallet_addEthereumChain',
               params: [
                 {
-                  chainId: '0x1f90',
-                  chainName: 'Shardeum Liberty',
-                  rpcUrls: ['https://liberty20.shardeum.org'],
+                  chainId: '0x3e5',
+                  chainName: '5ireChain Thunder',
+                  rpcUrls: ['https://rpc-testnet.5ire.network/'],
                   blockExplorerUrls: [
-                    'https://explorer.liberty20.shardeum.org/',
+                    'https://explorer.5ire.network/',
                   ],
                   nativeCurrency: {
-                    symbol: 'SHM',
+                    symbol: '5IRE',
                     decimals: 18,
                   },
                 },
