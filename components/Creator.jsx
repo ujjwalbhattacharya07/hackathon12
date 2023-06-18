@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Creator() {
   const contractAddress = factoryAddress.tokenFactory
-  const web3 = new Web3('https://liberty20.shardeum.org')
+  const web3 = new Web3('https://rpc-testnet.5ire.network/')
 
   const {
     register,
