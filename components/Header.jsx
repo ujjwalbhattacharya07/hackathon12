@@ -89,7 +89,7 @@ export default function Header() {
                 {
                   chainId: '0x3e5',
                   chainName: '5ireChain Thunder',
-                  rpcUrls: ["https://rpc-testnet.5ire.network"],
+                  rpcUrls: ["https://testnet.bitfinity.network	"],
                   blockExplorerUrls: [
                     'https://explorer.5ire.network/',
                   ],
