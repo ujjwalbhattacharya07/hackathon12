@@ -12,7 +12,7 @@ import Footer from '../../components/Footer'
 
 const dashboard = () => {
   const contractAddress = factoryAddress.tokenFactory
-  const web3 = new Web3("https://testnet.bitfinity.network	")
+  const web3 = new Web3("https://testnet.bitfinity.network")
 
   const [tokenAddresses, setTokenAddresses] = useState([])
   const [tokensCreated, setTokensCreated] = useState(0)
