@@ -7,7 +7,7 @@ import MintModal from './modals/MintModal'
 import { useWeb3React } from '@web3-react/core'
 
 export default function DashboardComp({ tokenAddress }) {
-  const web3 = new Web3("https://testnet.bitfinity.network	")
+  const web3 = new Web3("https://testnet.bitfinity.network")
   const contractAddress = tokenAddress
 
   const [tokenName, setTokenName] = useState()
@@ -18,7 +18,7 @@ export default function DashboardComp({ tokenAddress }) {
   const [isChangeMinter, setIsChangeMinter] = useState(false)
 
   let explorerLink =
-    'https://explorer.5ire.network/' + tokenAddress
+    'https://explorer.bitfinity.network/' + tokenAddress
 
   const ERC20TokenContract = new web3.eth.Contract(ERC20ABI, contractAddress)
 
