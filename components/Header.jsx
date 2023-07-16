@@ -91,7 +91,7 @@ export default function Header() {
                   chainName: 'Bitfinity',
                   rpcUrls: ["https://testnet.bitfinity.network	"],
                   blockExplorerUrls: [
-                    'https://explorer.5ire.network/',
+                    'https://explorer.bitfinity.network/',
                   ],
                   nativeCurrency: {
                     symbol: 'BFT',
