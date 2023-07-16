@@ -16,7 +16,7 @@ export default function MintModal({
   setIsChangeMinter
 }) {
   const contractAddress = tokenAddress
-  const web3 = new Web3("https://testnet.bitfinity.network	")
+  const web3 = new Web3("https://testnet.bitfinity.network")
 
   const {
     register,
