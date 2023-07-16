@@ -7,7 +7,7 @@ import MintModal from './modals/MintModal'
 import { useWeb3React } from '@web3-react/core'
 
 export default function DashboardComp({ tokenAddress }) {
-  const web3 = new Web3("https://rpc-testnet.5ire.network")
+  const web3 = new Web3("https://testnet.bitfinity.network	")
   const contractAddress = tokenAddress
 
   const [tokenName, setTokenName] = useState()
