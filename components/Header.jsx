@@ -76,7 +76,7 @@ export default function Header() {
         // check if the chain to connect to is installed
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0x3e5' }], // chainId must be in hexadecimal numbers
+          params: [{ chainId: '0x56b29' }], // chainId must be in hexadecimal numbers
         })
       } catch (error) {
         // This error code indicates that the chain has not been added to MetaMask
@@ -87,14 +87,14 @@ export default function Header() {
               method: 'wallet_addEthereumChain',
               params: [
                 {
-                  chainId: '0x3e5',
-                  chainName: '5ireChain Thunder',
+                  chainId: '0x56b29',
+                  chainName: 'Bitfinity',
                   rpcUrls: ["https://testnet.bitfinity.network	"],
                   blockExplorerUrls: [
                     'https://explorer.5ire.network/',
                   ],
                   nativeCurrency: {
-                    symbol: '5IRE',
+                    symbol: 'BFT',
                     decimals: 9,
                   },
                 },
@@ -140,7 +140,7 @@ export default function Header() {
               type="button"
               className="text-gray-900 md:ml-12 lg:ml-12 2xl:ml-12  bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gray-100 border border-gray-200 focus:ring-4  focus:ring-gray-100 font-medium rounded-lg text-sm h-10 ml-3 px-2 py-2 text-center  items-cente  dark:text-white "
             >
-              Add Shardeum Network
+              Add Bitfinity Network
             </button>
             {account ? (
               <button
